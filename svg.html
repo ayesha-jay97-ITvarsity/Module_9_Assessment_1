@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>SVG </title>
+    </head>
+
+    <body>
+        <svg width = "500" height = "500">                                                                                          <!-- we create container for shapes we wanna build using the svg tag, and specify the container dimen's -->
+            <defs>                                                                                                                  <!-- definition in wehihch we define our pattern for our dotted rectangle. defs stores graphical objects for later use-->
+                <pattern id = "pattern1" x = "0" y = "0" width = "12" height = "12" patternUnits = "userSpaceOnUse">                <!-- x & y coords of where pattern starts. "userSpaceOnUse" patt units means that we will define the units to space out our patt-->
+                    <circle cx = "5" cy = "5" r = "3" stroke = "0" fill = "blue"></circle>                                          <!-- now we define the pattern by specifying the cicles that make up the pattern -->    
+                </pattern>
+            </defs>
+
+            <rect x = "60" y = "140" width = "220" height = "135" stroke = "black" stroke-width = "2" style = "fill: url(#pattern1)"></rect>     <!-- instead of filling the rect with a colour, we fill it with the pattern1 we created above using inline css -->
+
+            <circle cx = "50" cy = "50" r = "30" stroke = "black" stroke-width = "5" fill = "purple"></circle>                                  <!-- we draw a circle, specifying the x (cx) & y (cy) circle coords, as well as the radius (r) size, and we also specify the stroke line width, colour, and fill colour -->
+            <line x1 = "250" y1 = "10" x2 = "200" y2 = "300" stroke = "red" stroke-width = "6"></line>                                          <!-- x1 and y1 = starting point of the line. x2 and y2 = ending point of the line -->
+        </svg>
+        
+    </body>
+</html>

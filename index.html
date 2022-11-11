@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" type = "text/css" href = "css/style.css">                          <!-- link to stylesheet -->
+        <title>Countdown Timer </title>
+    </head>
+
+    <body>
+        <div class = "container">                                                                                                           <!-- all elements of our CT app will sit in this container -->
+            <svg id = "progressBarContainer" width = "144" height = "300">                                                                  <!-- these dimen's ensure that the shapes inside our svg fits inside our svg container-->      
+                <defs>                                                                                                                      <!-- definition in wehihch we define our pattern for our dotted rectangle. defs stores graphical objects for later use-->
+                    <pattern id = "pattern1" x = "0" y = "0" width = "12" height = "12" patternUnits = "userSpaceOnUse">                    <!-- x & y coords of where pattern starts. "userSpaceOnUse" patt units means that we will define the units to space out our patt-->
+                        <circle cx = "5" cy = "5" r = "3" stroke = "0" fill = "white"></circle>                                           <!-- now we define the pattern by specifying the cicles that make up the pattern -->    
+                    </pattern>
+                </defs>
+
+                <rect id = "progressBar" x = "0" y = "0" width = "144" height = "300" style = "fill: url(#pattern1);"></rect>
+            </svg>
+        
+
+            <div id = "clock">
+                <p> Ready! </p>
+            </div>
+
+            <div id = "content">
+                <select class = "selector" id = "hours">                                                <!-- drop-down list for hrs-->
+                    <option value = "0">0 hours</option>
+                    <option value = "1">1 hour</option>
+                    <option value = "2">2 hours</option>
+                    <option value = "3">3 hours</option>
+                    <option value = "4">4 hours</option>
+                    <option value = "5">5 hours</option>
+                    <option value = "6">6 hours</option>
+                    <option value = "7">7 hours</option>
+                    <option value = "8">8 hours</option>
+                    <option value = "9">9 hours</option>
+                    <option value = "10">10 hours</option>
+                    <option value = "11">11 hours</option>
+                    <option value = "12">12 hours</option>
+                    <option value = "13">13 hours</option>
+                    <option value = "14">14 hours</option>
+                    <option value = "15">15 hours</option>
+                    <option value = "16">16 hours</option>
+                    <option value = "17">17 hours</option>
+                    <option value = "18">18 hours</option>
+                    <option value = "19">19 hours</option>
+                    <option value = "20">20 hours</option>
+                    <option value = "21">21 hours</option>
+                    <option value = "22">22 hours</option>
+                    <option value = "23">23 hours</option>
+                </select>
+
+                <select class = "selector" id = "minutes">                                              <!-- drop-down list for mins-->
+                    <option value = "0">0 min</option>
+                    <option value = "1">1 min</option>
+                    <option value = "2">2 min</option>
+                    <option value = "3">3 min</option>
+                    <option value = "4">4 min</option>
+                    <option value = "5">5 min</option>
+                    <option value = "6">6 min</option>
+                    <option value = "7">7 min</option>
+                    <option value = "8">8 min</option>
+                    <option value = "9">9 min</option>
+                    <option value = "10">10 min</option>
+                    <option value = "11">11 min</option>
+                    <option value = "12">12 min</option>
+                    <option value = "13">13 min</option>
+                    <option value = "14">14 min</option>
+                    <option value = "15">15 min</option>
+                    <option value = "16">16 min</option>
+                    <option value = "17">17 min</option>
+                    <option value = "18">18 min</option>
+                    <option value = "19">19 min</option>
+                    <option value = "20">20 min</option>
+                    <option value = "21">21 min</option>
+                    <option value = "22">22 min</option>
+                    <option value = "23">23 min</option>
+                    <option value = "24">24 min</option>
+                    <option value = "25">25 min</option>
+                    <option value = "26">26 min</option>
+                    <option value = "27">27 min</option>
+                    <option value = "28">28 min</option>
+                    <option value = "29">29 min</option>
+                    <option value = "30">30 min</option>
+                    <option value = "31">31 min</option>
+                    <option value = "32">32 min</option>
+                    <option value = "33">33 min</option>
+                    <option value = "34">34 min</option>
+                    <option value = "35">35 min</option>
+                    <option value = "36">36 min</option>
+                    <option value = "37">37 min</option>
+                    <option value = "38">38 min</option>
+                    <option value = "39">39 min</option>
+                    <option value = "40">40 min</option>
+                    <option value = "41">41 min</option>
+                    <option value = "42">42 min</option>
+                    <option value = "43">43 min</option>
+                    <option value = "44">44 min</option>
+                    <option value = "45">45 min</option>
+                    <option value = "46">46 min</option>
+                    <option value = "47">47 min</option>
+                    <option value = "48">48 min</option>
+                    <option value = "49">49 min</option>
+                    <option value = "50">50 min</option>
+                    <option value = "51">51 min</option>
+                    <option value = "52">52 min</option>
+                    <option value = "53">53 min</option>
+                    <option value = "54">54 min</option>
+                    <option value = "55">55 min</option>
+                    <option value = "56">56 min</option>
+                    <option value = "57">57 min</option>
+                    <option value = "58">58 min</option>
+                    <option value = "59">59 min</option>
+                </select>
+
+                <select class = "selector" id = "seconds">                                              <!-- drop-down list for secs -->
+                    <option value = "0">0 sec</option>
+                    <option value = "1">1 sec</option>
+                    <option value = "2">2 sec</option>
+                    <option value = "3">3 sec</option>
+                    <option value = "4">4 sec</option>
+                    <option value = "5">5 sec</option>
+                    <option value = "6">6 sec</option>
+                    <option value = "7">7 sec</option>
+                    <option value = "8">8 sec</option>
+                    <option value = "9">9 sec</option>
+                    <option value = "10">10 sec</option>
+                    <option value = "11">11 sec</option>
+                    <option value = "12">12 sec</option>
+                    <option value = "13">13 sec</option>
+                    <option value = "14">14 sec</option>
+                    <option value = "15">15 sec</option>
+                    <option value = "16">16 sec</option>
+                    <option value = "17">17 sec</option>
+                    <option value = "18">18 sec</option>
+                    <option value = "19">19 sec</option>
+                    <option value = "20">20 sec</option>
+                    <option value = "21">21 sec</option>
+                    <option value = "22">22 sec</option>
+                    <option value = "23">23 sec</option>
+                    <option value = "24">24 sec</option>
+                    <option value = "25">25 sec</option>
+                    <option value = "26">26 sec</option>
+                    <option value = "27">27 sec</option>
+                    <option value = "28">28 sec</option>
+                    <option value = "29">29 sec</option>
+                    <option value = "30">30 sec</option>
+                    <option value = "31">31 sec</option>
+                    <option value = "32">32 sec</option>
+                    <option value = "33">33 sec</option>
+                    <option value = "34">34 sec</option>
+                    <option value = "35">35 sec</option>
+                    <option value = "36">36 sec</option>
+                    <option value = "37">37 sec</option>
+                    <option value = "38">38 sec</option>
+                    <option value = "39">39 sec</option>
+                    <option value = "40">40 sec</option>
+                    <option value = "41">41 sec</option>
+                    <option value = "42">42 sec</option>
+                    <option value = "43">43 sec</option>
+                    <option value = "44">44 sec</option>
+                    <option value = "45">45 sec</option>
+                    <option value = "46">46 sec</option>
+                    <option value = "47">47 sec</option>
+                    <option value = "48">48 sec</option>
+                    <option value = "49">49 sec</option>
+                    <option value = "50">50 sec</option>
+                    <option value = "51">51 sec</option>
+                    <option value = "52">52 sec</option>
+                    <option value = "53">53 sec</option>
+                    <option value = "54">54 sec</option>
+                    <option value = "55">55 sec</option>
+                    <option value = "56">56 sec</option>
+                    <option value = "57">57 sec</option>
+                    <option value = "58">58 sec</option>
+                    <option value = "59">59 sec</option>
+                </select>
+            </div>
+
+            <div class = "buttonSection">
+                <div class = "button1">
+                    <button class = "roundButton" id = "start">Start</button>
+                </div>
+
+                <div class = "button2">
+                    <button class = "roundButton" id = "cancel">Cancel</button>    
+                </div>
+            </div>
+        
+        </div>
+
+        <script>
+            /* the event listener for start button*/
+            document.getElementById("start").addEventListener("click", /*getEndTime*/ startTimer);      /* call func/event getEndTime created below i.e. when user clicks on element with "start" id, apply the getEndTime func/event. When we're done with getEndTime, we replace it with "starTimer" to call that func next */
+            /* the event listener for cancel button*/
+            document.getElementById("cancel").addEventListener("click", cancelledButtonPressed);        /* apply cancelledButtonPressed func when the element with "cancel" is clicked */
+            
+        /* create our four global var's needed to create our countdown timer app */
+            var startTime;                                                                              /* the curr time at which the timer must start counting down from */
+            var endTime;                                                                                /* the time at which the timer must stop */
+            var origTimePeriod;                                                                         /* the time period at which the timer must add to the curr time */
+            var newTimePeriod;                                                                          /* the indicated time displayed that renews every second as the timer counts down */
+            var timer;                                                                                  /* declare the var "timer" as a global var that we can apply in both the startTimer func, where it was init'ly just a local var, but now can also be applied in the displayCountdown func */
+            var cancelled = false;                                                                      /* boolean type var */
+
+        /* create funcs */
+
+            function startTimer() {
+                cancelled = false;                                                                      /* reset cancelled to false when the startTimer func is applied so that the cancel button does not permanantly cancel the timer from being restarted after clicking cancel once */
+
+                /* give the var's a val */
+                startTime = new Date();                                                                 /* give the var startTime the val of the curr date */
+                endTime = getEndTime();                                                                 /* return the val of the func getEndTime i.e. after adding the sel'd time period to the curr time */
+
+                /*console.log(startTime + ": " + endTime); */                                           /* test if the abovemention'd var's work by displaying them in the console log. we remove this and move it to line 216 to test the origTimePeriod in the console log */
+
+                /* endTime - startTime = time period that must be count down */
+                origTimePeriod = endTime.getTime() - startTime.getTime();                               /* getTime func gets the time, exlcuding the date and time zones. So give the var "origTimePeriod" the val of the time inside the endTime minus the time inside the startTime */
+
+                /* to test if origTimePeriod is properly displayed */
+                /*console.log(startTime + ": " + endTime + ": " + origTimePeriod); */                   /* display in the console log the start time, the end time, and the origTimePeriod in millisecs (w.o. the date). after we're done checking if our funcs work, we can remove this line of code */
+
+                newTimePeriod = origTimePeriod;                                                         /* newTimePeriod = the seconds as they count down. when user clicks for e.g. 10secs and then start, newTimePeriod = 10s, and then 9s, and 8s, etc i.e. each of the new val's as it is count down from 10 will be stored in newTimePeriod, but the original 10s will be stored in origTimePeriod */
+
+                timer = setInterval(displayCountdown, 1000);                                            /* setInterval is a JS func that repeats a section of code every x-number of seconds e.g. if we wanted to output something to the screen every second. the setInterval func takes 2 types of param's: callback func (& ...?) Callback func e.g. when we say "setInterval(function(){console.log("Sup bitvhes")}, 1000)", the callback func will be repeated every 1000th millisec i.e. every sec, the console will log the mesage "sup bitches". It's better to break down the func so that it's not as complex,. which is what we've done in the following lines of code in the func "diplayCountdown", which we then applied in this line of code  */
+            }
+            
+            function displayCountdown(){                                                                /* it's better to break the above func down and simply call the func "displayCountdown", which we've created in this line */
+                var timeLeft = msToTime(newTimePeriod);                                                 /* create a var "timeLeft", which will have the val after the func msToTime() has been called, which converts our millisecs to time units i.e. once we pass it the number of millisecs from "newTimePeriod", it will return the time aray from msToTime(). i.e. once the displayCountdown func receives the number of millisecs from the "newTimePeriod", it will send it to msToTime() to convert the millisecs to hrs, mins, secs and return it in the time array, which will then be stored in the var "timeLeft" */
+
+                /*console.log("Sup bicthes"); */                                                                                                    /* create a func that displays a part message in the console log. this was just for testing, so we remove this and add the following code */
+                document.getElementById("clock").innerHTML = `<p> ${timeLeft["hours"]}h ${timeLeft["minutes"]}m ${timeLeft["seconds"]}s </p>`;      /* give the element with "clock" id the val of newTimePeriod i.e. seconds as they count down. After we convert our millisecs to corect time units with msToTime func, replace "newTimePeriod" with "timeLeft" in a paragr so that each element in the time array has "h" after hours, "m" after minutes, and "s" after seconds as the time counts down i.e. time remaining should be displayed in hrs, mins, secs */
+
+                /* create var for the progress bar */
+                var newHeight = Math.floor(newTimePeriod / origTimePeriod * 100) * 3;                   /* create var nweHeight that has the val of the newTimePeriod out of the origTimePeriod as a percentage %, and then multi that percentage 3, which is the height of our progress bar rect (i.e. 300px / 100% = 3) in line 20 */
+                document.getElementById("progressBar").setAttribute("height", newHeight);               /* display the progress bar and set its "height" atttribute to the val of the var "newHeight" */
+
+                newTimePeriod -= 1000;                                                                  /* newTimePeriod is equal to newTimePeriod minus 1000 i.e. every second (1 sec = 1000 millisecs), newTimePeriod will be decremented by 1000 millisecs i.e. by 1 sec, which allows us to prove visually that the val newTimePeriod is decreasing by the second after hitting the start button, and not just displaying the val of the origTimePeriod by x-number of times as speci'd by the user */
+
+                /* specify when timer must stop or is cancelled */
+                if(newTimePeriod < 0 || cancelled){                                                     /* when the val of newTimePeriod is < 0 OR (||) is cancelled i.e. if cancelled is set to true, then apply the following: */
+                    clearInterval(timer);                                                               /* when the val of newTimePeriod is <0, then clear the interval of the timer var i.e. make it stop counting down. clearInterval() stops whatev was set with the setInterval func, in this case, the timer var that displays a countdown of every 1000 millisecs i.e. every sec. As is, the timer var is a local var inside the func displayCountdown, thus JS will receive an error that there is no (local) var called "timer". Thus, we declare the "timer" var as a global var, which will then apply inside any func */
+                    document.getElementById("clock").innerHTML = "<p>Complete!</p>";                           /* once the timer has stopped, instead of displaying 0h 0m 0s, it will display the word "Complete!" */
+                }
+            }
+
+            /* create func for when cancel button is pressed */
+            function cancelledButtonPressed() {
+                cancelled = true;                                                                       /* when cancelled button is pressed, set the var "cancelled" to true, which means that... */
+            }
+
+            /*NOTE: 1 second = 1 000 milliseconds 
+                    1 minute = 1 000 milliseconds * 60 seconds in 1 min = 60 000 milliseconds in 1 minute
+                    1 hour   = 1 000 milliseconds * 60 minutes in 1 hour * 60 seconds in 1 min = 3 600 000 milliseconds in 1 hour */
+
+            /* create func that converts millisecs to hours, minutes, and seconds */
+            function msToTime(milliseconds){                                                            /* cos we want to calc the millisec per timer unit, we pass the func the param "milliseconds" */
+                /* specify the time unit per millisecond i.e. create a rate for millisecs */
+                var mHour    = 1000 * 60 * 60;                                                          /* mHour = millisecs per hour */
+                var mMinute = 1000 * 60;                                                                /* mMinute = millisecs per min */
+                var mSecond = 1000;                                                                     /* mSeconds = millisecs per sec */
+
+                /* create time var's */
+                var hour = Math.floor(milliseconds / mHour);                                            /* "Math.floor" rounds off to the closest whole number i.e. cuts off decimals */
+                var minutes = Math.floor((milliseconds % mHour) / mMinute);                             /* "milliseconds % mHour" refers to the remaining time after subtracting the hours, and then takiing the remainder and dividing it by mMinutes to get the minutes. we can't use milliseconds itself cos we already used it to get the hours */
+                var seconds = Math.floor((milliseconds % mMinute) / mSecond);                           /* we take the remaining time left over from mMinute and divide it by mSecond to get the seconds */
+
+                /* create time array */
+                var time = [];                                                                          /* we create an array using square blackets[] (i.e. an object containing other elements, so our time objects contains the elements hours, minutes, and seconds) */
+                time["hours"] = hour;                                                                   /* inside our time array object, we create our elements "hours", "minutes, and "seconds", which we give the val's of the var's hours, minutes, and seconds that we've created above in the preceding lines of code */
+                time["minutes"] = minutes;
+                time["seconds"] = seconds;
+                
+                return time;                                                                            /* return the time array, which contains the vals for hours, minutes, and seconds */
+            }
+            
+            function getEndTime(){
+                /* get current time */
+                var dt = new Date();                                                                     /* create a var and make its val the curr time */
+
+                /* get time that must be count down as sel'd by user */
+                var hours = parseInt(document.getElementById("hours").value);                            /* create hours var and make the val for hours from the element with the id "hours" (i.e. our hrs drop down) and convert it to an integer with parseInt */
+                var minutes = parseInt(document.getElementById("minutes").value);
+                var seconds = parseInt(document.getElementById("seconds").value);
+
+                /* give curr time before adding input time (i.e. before the code below is applied) */
+                /* console.log(dt); */
+
+                /* add time to be counted down to curr time */
+                dt.setHours(dt.getHours() + hours);                                                      /* get hour from the curr time stored in the dt var & add to it the hours sel'd by the user */
+                dt.setMinutes(dt.getMinutes() + minutes);
+                dt.setSeconds(dt.getSeconds() + seconds);
+                return dt;                                                                               /* the end time is now stored in dt, which is returned with the "return" func. after checking that our code works with the console/log() (line 208 & 217), we remove those lines and return the val's now stored in dt i.e. the end time of our timer */
+
+                /* give time after time sel'd is added i.e. the end time */
+                /* console.log(dt); */                                                                    /* to test if our var's created above work in our browser console ( right click > inspect > console tab) */ 
+            }
+
+        </script>
+    </body>
+</html>

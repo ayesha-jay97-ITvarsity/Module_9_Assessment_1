@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>JS Dates & Times </title>
+    </head>
+    <body>
+        <p id = "output"></p>
+        <p id = "output2"></p>
+
+        <script>
+            var dt = new Date(1980, 2);                                                     /* create global date var (aka date object) called "dt" (date-time), which will store the curr date & time a.w.a the time zone you're in. "Date()" uses a method called the constructor, which can be applied with param's not w.o. any, as is shwon by the empty brackets. If no param is spci'd btwn the date brakcets, then the val returned will be the curr date and time. However, we can specify a specif date and time as per our requiremets. E.g. we can pass it the number of millisec's we want, so if we pass it a 0, it means we want the 0th mllisec from the date 01 Jan 1970 at 2am (SA time). So if we want the date Jan 01 2020 2am, we'll pass it the val 1578563479816, which is the amount of mmilisec's from 01/01/1970 11:51pm. Anoth way to specify a specific date would be to pass it param's that make up the date. E.g.if you want the date 15 Jan 2019 8:00am SA time to be displayed, do it in the following order: Date(yr, month, day, hr, min , sec) i.e. Date(2019, 0, 15, 8, 0, 0) = 15 Jan 2019 8:00am. Note that in JS, month # starts with 0, so Jan = 0, Feb = 1, Mar = 3, etc */
+            
+            document.getElementById("output").innerHTML = dt;                               /* specify where that the elem with the "output" id will have the val of the var "dt". "dt.GetFullYear/Date/etc()" can be used to extract a specif param from the date we stored in the "dt" var (Note: dt.GetFullYear() must have brackets cos its a function). */
+
+            /* changing a set time to something else with setter funcs*/
+            dt.setHours(11);                                                                /* in the dt var, change the time by setting hours to 11am */
+            dt.setMinutes(25);                                                              /* 25 min past */
+            dt.setFullYear(2009);
+            document.getElementById("output2").innerHTML = dt;                              /* state where output must appr */
+        </script>
+    </body>
+</html>

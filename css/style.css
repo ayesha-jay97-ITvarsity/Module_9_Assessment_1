@@ -1,0 +1,72 @@
+body{
+    background-color: #097780;
+    font-family     : sans-serif;
+    text-align      : center;
+}
+
+.container{                                                 /* class what contains everything */
+    width: 100%;
+}
+
+p{
+    color    : white;
+    font-size: 10vh;                                        /* 10% of the vertical width regardless of the screen size */
+}
+
+#clock{
+    width     : 100%;
+    text-align: center;
+}
+
+#progressBarContainer{                                      /* svg with id that contains the progress bar */
+    transform: rotate(180deg);                              /* rotates the progress bar so that when the bar decreases in size, it decreases from the top down rather than the orig bottom-up direction  */
+}
+
+.buttonSection{
+    width: 100%;
+    padding-top: 3rem;
+}
+
+.roundButton{
+    border-radius   : 50%;
+    background-color: white;
+    border          : 0;
+    width           : 5rem;
+    height          : 5rem;
+    font-size       : 1rem;
+}
+
+.button1{
+    float: left;
+    width: 49%;
+}
+
+.button2{
+    float: right;
+    width: 49%;
+}
+
+/* style drop down lists */
+.selector{
+    background-color  : white;
+    padding           : .8rem 1.4rem .9rem .8rem;           
+    width             : 30%;           
+    border-radius     : .5rem;
+    -moz-appearance   : none;                               /* lines 55-57 are respon for removing the down arrow by the drop-down lists */
+    -webkit-appearance: none;
+    appearance        : none;    
+    font-size         : 1rem;
+    text-align        : center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
